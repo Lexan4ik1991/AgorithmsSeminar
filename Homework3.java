@@ -76,31 +76,31 @@ public class Homework3 {
             ListItem<T> next;
         }
 
-        //Проверка head на пустоту
+
         public boolean isEmpty() {
             return head == null;
         }
 
-        //заполнение списка
+
         public void addToEnd(T item) {
 
-            //Выделение памяти для списка
+
             ListItem<T> newItem = new ListItem<>();
             newItem.data = item;
 
-            //Если, голова и хвост пустая
+
             if (isEmpty()) {
                 head = newItem;
                 tail = newItem;
-            } else { //Если, не пустая то передаём элементу адрес и ставим в хвост
+            } else {
                 tail.next = newItem;
                 tail = newItem;
             }
         }
 
-        //метод разворота списка
+
         public void reverse() {
-            if (!isEmpty() && head.next != null) {//Если голова не равна нулю
+            if (!isEmpty() && head.next != null) {
                 tail = head;
                 ListItem<T> current = head.next;
                 head.next = null;
